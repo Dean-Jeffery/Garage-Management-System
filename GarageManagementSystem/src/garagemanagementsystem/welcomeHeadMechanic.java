@@ -9,12 +9,12 @@ package garagemanagementsystem;
  *
  * @author itsde
  */
-public class welcomeMechanic extends javax.swing.JFrame {
+public class welcomeHeadMechanic extends javax.swing.JFrame {
 
     /**
-     * Creates new form welcomeMechanic
+     * Creates new form welcomeHeadMechanic
      */
-    public welcomeMechanic() {
+    public welcomeHeadMechanic() {
         initComponents();
     }
 
@@ -27,7 +27,6 @@ public class welcomeMechanic extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblWelcome = new javax.swing.JLabel();
         txtQuote = new javax.swing.JTextArea();
         lblActiveTasks = new javax.swing.JLabel();
         lblActiveJob = new javax.swing.JLabel();
@@ -35,12 +34,10 @@ public class welcomeMechanic extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
         lblMarkasComplete = new javax.swing.JLabel();
+        lblWelcome = new javax.swing.JLabel();
+        btnCompletedwork1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-
-        lblWelcome.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblWelcome.setText("Welcome,");
 
         txtQuote.setColumns(20);
         txtQuote.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
@@ -63,13 +60,25 @@ public class welcomeMechanic extends javax.swing.JFrame {
 
         lblMarkasComplete.setText("Mark as complete");
 
+        lblWelcome.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblWelcome.setText("Welcome,");
+
+        btnCompletedwork1.setText("Create New Task");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtQuote, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113))
             .addGroup(layout.createSequentialGroup()
                 .addGap(104, 104, 104)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCompletedwork1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -80,7 +89,7 @@ public class welcomeMechanic extends javax.swing.JFrame {
                                 .addComponent(lblWelcome)
                                 .addGap(309, 309, 309)))
                         .addGap(18, 18, 18)
-                        .addComponent(btnQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                        .addComponent(btnQuit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(78, 78, 78))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblActiveJob)
@@ -88,11 +97,7 @@ public class welcomeMechanic extends javax.swing.JFrame {
                         .addComponent(lblActiveTasks)
                         .addGap(18, 18, 18)
                         .addComponent(lblMarkasComplete)
-                        .addGap(51, 51, 51))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtQuote, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113))
+                        .addGap(16, 16, 16))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,13 +106,15 @@ public class welcomeMechanic extends javax.swing.JFrame {
                 .addComponent(lblWelcome)
                 .addGap(31, 31, 31)
                 .addComponent(txtQuote, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblActiveJob)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblActiveTasks)
                         .addComponent(lblMarkasComplete)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
+                .addComponent(btnCompletedwork1)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCompletedwork)
                     .addComponent(btnLogout)
@@ -135,26 +142,27 @@ public class welcomeMechanic extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(welcomeMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(welcomeHeadMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(welcomeMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(welcomeHeadMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(welcomeMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(welcomeHeadMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(welcomeMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(welcomeHeadMechanic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new welcomeMechanic().setVisible(true);
+                new welcomeHeadMechanic().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCompletedwork;
+    private javax.swing.JButton btnCompletedwork1;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnQuit;
     private javax.swing.JLabel lblActiveJob;
