@@ -5,9 +5,14 @@
  */
 package garagemanagementsystem;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author itsde
+ * @author Dean
  */
 public class loginUI extends javax.swing.JFrame {
 
@@ -41,20 +46,16 @@ public class loginUI extends javax.swing.JFrame {
         jPanelLogin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelLogin.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
 
-        lblUsername.setForeground(new java.awt.Color(0, 0, 0));
         lblUsername.setText("Username");
 
         txtUsername.setBackground(new java.awt.Color(204, 204, 204));
-        txtUsername.setForeground(new java.awt.Color(0, 255, 255));
 
         lblPassword.setBackground(new java.awt.Color(0, 0, 0));
-        lblPassword.setForeground(new java.awt.Color(0, 0, 0));
         lblPassword.setText("Password");
 
         txtPassword.setBackground(new java.awt.Color(204, 204, 204));
 
         btnLogin.setBackground(new java.awt.Color(102, 255, 102));
-        btnLogin.setForeground(new java.awt.Color(0, 0, 0));
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +99,11 @@ public class loginUI extends javax.swing.JFrame {
 
         btnQuit.setBackground(new java.awt.Color(255, 0, 0));
         btnQuit.setText("Quit");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,8 +131,72 @@ public class loginUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+        // QUIT BUTTON
+        System.exit(0);
+    }//GEN-LAST:event_btnQuitActionPerformed
+
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        if (txtUsername.getText().equals("") || txtPassword.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please provide a username and password");
+        }
+        else {
+            String sql = "SELECT id, username, role, password FROM tbl_user WHERE (username =? AND password=?)";
+            
+            try {
+                String enteredUsername = txtUsername.getText();
+                String enteredPassword = txtPassword.getText();
+                
+                int id = 0;
+                String role = "";
+                
+                Connection conn = db.Connect();
+                
+                PreparedStatement pStatement = conn.prepareStatement(sql);
+                pStatement.setString(1, enteredUsername);
+                pStatement.setString(2, enteredPassword);
+                
+                ResultSet rs = pStatement.executeQuery();
+                
+                int count = 0;
+                
+                while (rs.next()) {
+                    id = rs.getInt("id");
+                    role = rs.getString("role");
+                    count++;
+                }
+                
+                if (count == 1){
+                    if (role.equals("System Admin")){
+                        JOptionPane.showMessageDialog(null, "You have logged in your id is " + id + " your role is " + role);
+                    }
+                    if (role.equals("Head Mechanic")){
+                        welcomeHeadMechanic hm = new welcomeHeadMechanic();
+                        hm.setVisible(true);
+                        this.dispose();
+                    }
+                    if (role.equals("Mechanic")){
+                        welcomeMechanic m = new welcomeMechanic();
+                        m.setVisible(true);
+                        this.dispose();
+                    }
+                    if (role.equals("Office Admin")){
+                        JOptionPane.showMessageDialog(null, "You have logged in your id is " + id + " your role is " + role);
+                    }
+                }
+                else if (count > 1) {
+                    JOptionPane.showMessageDialog(null, "Duplicate accounts found, please contact a system admin");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Invalid username or password");
+                }
+                
+            }
+            catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Error: " + e);
+            }
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
