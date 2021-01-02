@@ -57,6 +57,11 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
 
         btnQuit.setBackground(new java.awt.Color(255, 51, 51));
         btnQuit.setText("Quit");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuitActionPerformed(evt);
+            }
+        });
 
         lblMarkasComplete.setText("Mark as complete");
 
@@ -111,8 +116,7 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblActiveTasks)
                         .addComponent(lblMarkasComplete))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblActiveJob)))
+                    .addComponent(lblActiveJob))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
                 .addComponent(btnCompletedwork1)
                 .addGap(30, 30, 30)
@@ -125,6 +129,11 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnQuitActionPerformed
 
     /**
      * @param args the command line arguments

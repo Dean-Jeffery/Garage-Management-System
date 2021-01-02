@@ -131,8 +131,8 @@ public class login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // QUIT BUTTON
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
-        // QUIT BUTTON
         System.exit(0);
     }//GEN-LAST:event_btnQuitActionPerformed
 
