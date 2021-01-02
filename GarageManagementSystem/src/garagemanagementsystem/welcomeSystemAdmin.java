@@ -69,6 +69,11 @@ public class welcomeSystemAdmin extends javax.swing.JFrame {
         btnUpdateUserDetails.setText("Update User Details");
 
         btnCreateNewUser.setText("Create New User");
+        btnCreateNewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateNewUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,6 +127,13 @@ public class welcomeSystemAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnQuitActionPerformed
+
+    private void btnCreateNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewUserActionPerformed
+        // TODO add your handling code here:
+        addNewUser m = new addNewUser();
+        m.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCreateNewUserActionPerformed
 
     /**
      * @param args the command line arguments

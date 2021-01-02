@@ -191,7 +191,8 @@ public class login extends javax.swing.JFrame {
                     if (role.equals("Office Admin")){
                         welcomeOfficeAdmin m = new welcomeOfficeAdmin();
                         m.setVisible(true);
-                        this.dispose();                    }
+                        this.dispose();
+                    }
                 }
                 // If for any reason there are 2 identical entries in the database, display error dialog box instructing user to contact the system admin
                 else if (count > 1) {
