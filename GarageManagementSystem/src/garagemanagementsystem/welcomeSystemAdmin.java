@@ -16,14 +16,15 @@ import javax.swing.JOptionPane;
  * @author Dean
  */
 public class welcomeSystemAdmin extends javax.swing.JFrame {
+    
+    public welcomeSystemAdmin(){
+        initComponents();
+    }
 
     /**
      * Creates new form welcomeHeadMechanic
      */
-    public welcomeSystemAdmin() {
-        initComponents();
-        lblWelcome.setText("Welcome, " + username);
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

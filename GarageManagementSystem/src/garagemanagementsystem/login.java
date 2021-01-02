@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class login extends javax.swing.JFrame {
 
+
     /**
      * Creates new form loginUI
      */
@@ -173,7 +174,9 @@ public class login extends javax.swing.JFrame {
                 // If user gives a valid username and password combination, open different welcome page depending on their role
                 if (count == 1){
                     if (role.equals("System Admin")){
-                        JOptionPane.showMessageDialog(null, "You have logged in your id is " + id + " your role is " + role);
+                        welcomeSystemAdmin m = new welcomeSystemAdmin();
+                        m.setVisible(true);
+                        this.dispose();
                     }
                     if (role.equals("Head Mechanic")){
                         welcomeHeadMechanic hm = new welcomeHeadMechanic();
@@ -186,8 +189,9 @@ public class login extends javax.swing.JFrame {
                         this.dispose();
                     }
                     if (role.equals("Office Admin")){
-                        JOptionPane.showMessageDialog(null, "You have logged in your id is " + id + " your role is " + role);
-                    }
+                        welcomeOfficeAdmin m = new welcomeOfficeAdmin();
+                        m.setVisible(true);
+                        this.dispose();                    }
                 }
                 // If for any reason there are 2 identical entries in the database, display error dialog box instructing user to contact the system admin
                 else if (count > 1) {

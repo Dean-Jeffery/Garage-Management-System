@@ -28,14 +28,12 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         txtQuote = new javax.swing.JTextArea();
-        lblActiveTasks = new javax.swing.JLabel();
-        lblActiveJob = new javax.swing.JLabel();
         btnCompletedwork = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
-        lblMarkasComplete = new javax.swing.JLabel();
         lblWelcome = new javax.swing.JLabel();
         btnCompletedwork1 = new javax.swing.JButton();
+        btnCompletedwork2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,13 +42,7 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
         txtQuote.setRows(5);
         txtQuote.setText("\"If you are working on something exciting that you really care about,\nyou don't have to be pushed. The vision pulls you.\" - Steve Jobs");
 
-        lblActiveTasks.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblActiveTasks.setText("Active Tasks");
-
-        lblActiveJob.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblActiveJob.setText("Active Job");
-
-        btnCompletedwork.setText("Completed Work");
+        btnCompletedwork.setText("Create new job");
 
         btnLogout.setBackground(new java.awt.Color(255, 153, 51));
         btnLogout.setText("Logout");
@@ -63,46 +55,39 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
             }
         });
 
-        lblMarkasComplete.setText("Mark as complete");
-
         lblWelcome.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         lblWelcome.setText("Welcome,");
 
-        btnCompletedwork1.setText("Create New Task");
+        btnCompletedwork1.setText("View all jobs and tasks");
+
+        btnCompletedwork2.setText("View customers");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtQuote, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113))
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(116, 116, 116)
+                .addComponent(lblWelcome)
+                .addContainerGap(458, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCompletedwork1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCompletedwork, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(213, 213, 213)
-                                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblWelcome)
-                                .addGap(309, 309, 309)))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnQuit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(78, 78, 78))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblActiveJob)
+                        .addGap(89, 89, 89)
+                        .addComponent(btnCompletedwork1)
+                        .addGap(34, 34, 34)
+                        .addComponent(btnCompletedwork, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblActiveTasks)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblMarkasComplete)
-                        .addGap(16, 16, 16))))
+                        .addComponent(btnCompletedwork2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtQuote, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(113, 113, 113))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,20 +96,16 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
                 .addComponent(lblWelcome)
                 .addGap(31, 31, 31)
                 .addComponent(txtQuote, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblActiveTasks)
-                        .addComponent(lblMarkasComplete))
-                    .addComponent(lblActiveJob))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
-                .addComponent(btnCompletedwork1)
-                .addGap(30, 30, 30)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCompletedwork1)
                     .addComponent(btnCompletedwork)
-                    .addComponent(btnLogout)
-                    .addComponent(btnQuit))
-                .addGap(86, 86, 86))
+                    .addComponent(btnCompletedwork2))
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQuit)
+                    .addComponent(btnLogout))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         pack();
@@ -176,11 +157,9 @@ public class welcomeOfficeAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCompletedwork;
     private javax.swing.JButton btnCompletedwork1;
+    private javax.swing.JButton btnCompletedwork2;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnQuit;
-    private javax.swing.JLabel lblActiveJob;
-    private javax.swing.JLabel lblActiveTasks;
-    private javax.swing.JLabel lblMarkasComplete;
     private javax.swing.JLabel lblWelcome;
     private javax.swing.JTextArea txtQuote;
     // End of variables declaration//GEN-END:variables
