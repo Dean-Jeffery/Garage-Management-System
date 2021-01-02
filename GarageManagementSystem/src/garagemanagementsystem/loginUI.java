@@ -1,10 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Login page
  */
 package garagemanagementsystem;
 
+
+//imports
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
@@ -136,12 +136,15 @@ public class loginUI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnQuitActionPerformed
 
+    // Login Button
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        // If either username or password user input field is empty, give error message
         if (txtUsername.getText().equals("") || txtPassword.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Please provide a username and password");
         }
+        // If user inputs something in both username and password, begin login attempt
         else {
+            // Select database entry which matches user input for username and password
             String sql = "SELECT id, username, role, password FROM tbl_user WHERE (username =? AND password=?)";
             
             try {
@@ -167,6 +170,7 @@ public class loginUI extends javax.swing.JFrame {
                     count++;
                 }
                 
+                // If user gives a valid username and password combination, open different welcome page depending on their role
                 if (count == 1){
                     if (role.equals("System Admin")){
                         JOptionPane.showMessageDialog(null, "You have logged in your id is " + id + " your role is " + role);
@@ -185,11 +189,13 @@ public class loginUI extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "You have logged in your id is " + id + " your role is " + role);
                     }
                 }
+                // If for any reason there are 2 identical entries in the database, display error dialog box instructing user to contact the system admin
                 else if (count > 1) {
                     JOptionPane.showMessageDialog(null, "Duplicate accounts found, please contact a system admin");
                 }
+                // If the user enters an incorrect user/pass combination this returns an error dialog box 
                 else {
-                    JOptionPane.showMessageDialog(null, "Invalid username or password");
+                    JOptionPane.showMessageDialog(null, "Invalid username or password, try again");
                 }
                 
             }
