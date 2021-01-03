@@ -51,6 +51,11 @@ public class welcomeSystemAdmin extends javax.swing.JFrame {
         txtQuote.setText("\"If you are working on something exciting that you really care about,\nyou don't have to be pushed. The vision pulls you.\" - Steve Jobs");
 
         btnDeleteUser.setText("Delete a User");
+        btnDeleteUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteUserActionPerformed(evt);
+            }
+        });
 
         btnLogout.setBackground(new java.awt.Color(255, 153, 51));
         btnLogout.setText("Logout");
@@ -130,10 +135,16 @@ public class welcomeSystemAdmin extends javax.swing.JFrame {
 
     private void btnCreateNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewUserActionPerformed
         // TODO add your handling code here:
-        addNewUser m = new addNewUser();
-        m.setVisible(true);
+        addNewUser anu = new addNewUser();
+        anu.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_btnCreateNewUserActionPerformed
+
+    private void btnDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteUserActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnDeleteUserActionPerformed
 
     /**
      * @param args the command line arguments

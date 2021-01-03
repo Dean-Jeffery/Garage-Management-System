@@ -18,7 +18,7 @@ public class login extends javax.swing.JFrame {
 
 
     /**
-     * Creates new form loginUI
+     * Creates new form login
      */
     public login() {
         initComponents();
@@ -174,8 +174,8 @@ public class login extends javax.swing.JFrame {
                 // If user gives a valid username and password combination, open different welcome page depending on their role
                 if (count == 1){
                     if (role.equals("System Admin")){
-                        welcomeSystemAdmin m = new welcomeSystemAdmin();
-                        m.setVisible(true);
+                        welcomeSystemAdmin sa = new welcomeSystemAdmin();
+                        sa.setVisible(true);
                         this.dispose();
                     }
                     if (role.equals("Head Mechanic")){
@@ -189,8 +189,8 @@ public class login extends javax.swing.JFrame {
                         this.dispose();
                     }
                     if (role.equals("Office Admin")){
-                        welcomeOfficeAdmin m = new welcomeOfficeAdmin();
-                        m.setVisible(true);
+                        welcomeOfficeAdmin oa = new welcomeOfficeAdmin();
+                        oa.setVisible(true);
                         this.dispose();
                     }
                 }
