@@ -17,7 +17,7 @@ public class db {
     
         try {
             Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\itsde\\Desktop\\Development\\Garage-Management-System\\GarageManagementSystem\\UsersDB.db");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\itsde\\Desktop\\Development\\Garage-Management-System\\GarageManagementSystem\\GarageDB.db");
             return conn;
         }
         catch (Exception e) {
