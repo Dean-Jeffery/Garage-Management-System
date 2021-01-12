@@ -70,6 +70,11 @@ public class newJob extends javax.swing.JFrame {
 
         btnLogout.setBackground(new java.awt.Color(255, 102, 0));
         btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
 
         btnQuit.setBackground(new java.awt.Color(255, 0, 0));
         btnQuit.setText("Quit");
@@ -169,6 +174,12 @@ public class newJob extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnQuitActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        login l = new login();
+        l.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,0 +1,5 @@
+1. username: PamB password: CeCe role: Office Admin
+2. username: MichaelS password: 12345 role: Head Mechanic
+3. username: JimH password: 76ers role: Mechanic
+4. username: DwightH password: Beetroot role: Mechanic
+5. username: ITGuy password: password role: System Admin
